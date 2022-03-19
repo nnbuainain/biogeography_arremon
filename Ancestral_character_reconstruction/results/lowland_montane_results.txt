@@ -1,0 +1,41 @@
+> aic
+      ER      ARD      SYM 
+44.19599 48.08277 43.89276 
+> #or the model with the AICw closest to 1
+> aic.w(aic)
+        ER        ARD        SYM 
+0.43347657 0.06208156 0.50444188 
+
+> mtrees<-make.simmap(tree,svl,model="SYM",nsim=10000)
+make.simmap is sampling character histories conditioned on the transition matrix
+
+Q =
+                    lowland     montane montane_lowland
+lowland         -0.09358293  0.03114499      0.06243794
+montane          0.03114499 -0.03114499      0.00000000
+montane_lowland  0.06243794  0.00000000     -0.06243794
+(estimated using likelihood);
+and (mean) root node prior probabilities
+pi =
+        lowland         montane montane_lowland 
+      0.3333333       0.3333333       0.3333333 
+Done.
+
+> mtrees
+10000 phylogenetic trees with mapped discrete characters
+> pd
+10000 trees with a mapped discrete character with states:
+ lowland, montane, montane_lowland 
+
+trees have 6.1653 changes between states on average
+
+changes are of the following types:
+     lowland,montane lowland,montane_lowland montane,lowland montane,montane_lowland
+x->y          2.1877                  2.6319          1.0872                       0
+     montane_lowland,lowland montane_lowland,montane
+x->y                  0.2585                       0
+
+mean total time spent in each state is:
+        lowland    montane montane_lowland    total
+raw  40.6317258 64.7515285      5.66928875 111.0525
+prop  0.3658784  0.5830711      0.05105051   1.0000

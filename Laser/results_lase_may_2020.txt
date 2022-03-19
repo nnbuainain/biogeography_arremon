@@ -1,0 +1,915 @@
+################ 		LASER PACKAGE ANALYSES
+
+######## ARREMON
+
+### MAY 2020
+
+
+
+## ALL CLADES
+
+> gamStat(bt)
+------------------------------
+Calculated gamma: -3.261341
+pvalue: 0.0005544325 
+test: one-tailed; Ho: rates have not decreased over time 
+*assumes complete taxon sampling.
+$gamstat
+[1] -3.261341
+
+$pval
+[1] 0.0005544325
+
+$test
+[1] "one-tailed; Ho: rates have not decreased over time"
+
+> results<-fitdAICrc(bt, modelset = c("pureBirth", "bd","DDX", "DDL", "yule2rate"),ints="NULL")
+
+--------------Model Summary----------------
+
+MODEL pureBirth 
+
+Parameters:  r1 
+
+LH 20.30676 
+
+AIC -38.61351 
+
+r1 0.3151661 
+
+a -38.61351 
+
+
+--------------------------
+MODEL bd 
+
+Parameters:  r1, a 
+
+LH 20.30676 
+
+AIC -36.61351 
+
+r1 0.3151661 
+
+a 0 
+
+
+--------------------------
+MODEL DDX 
+
+Parameters:  r1, X 
+
+LH 22.01917 
+
+AIC -40.03834 
+
+r1 0.8742508 
+
+a -40.03834 
+
+x 0.3551721 
+
+
+--------------------------
+MODEL DDL 
+
+Parameters:  r1, k 
+
+LH 26.87864 
+
+AIC -49.75728 
+
+r1 0.824364 
+
+a -49.75728 
+
+k 40.58666 
+
+
+--------------------------
+MODEL yule2rate 
+
+Parameters:  r1, r2, ts 
+
+LH 29.58884 
+
+AIC -53.17767 
+
+r1 0.467111 
+
+r2 0.04949819 
+
+st 1.098712 
+
+
+--------------------------
+
+Best Constant Rate Model = pureBirth  AIC  -38.61351 
+
+Best Rate Variable Model = yule2rate  AIC  -53.17767 
+
+delta AICrc =  14.56416 
+
+> fitSPVAR(bt)
+$model
+[1] "SPVAR"
+
+$LH
+[1] 21.70835
+
+$aic
+[1] -37.41671
+
+$lam0
+[1] 0.7003442
+
+$k
+[1] 0.1351079
+
+$mu0
+[1] 0.001
+
+> fitBOTHVAR(bt)
+$model
+[1] "BOTHVAR"
+
+$LH
+[1] 21.71677
+
+$aic
+[1] -35.43353
+
+$lam0
+[1] 0.6988774
+
+$k
+[1] 0.1349802
+
+$mu0
+[1] 0.001
+
+$z
+[1] 0.001
+
+> fitEXVAR(bt)
+$model
+[1] "EXVAR"
+
+$LH
+[1] 20.29365
+
+$aic
+[1] -34.58729
+
+$lam0
+[1] 0.3156224
+
+$mu0
+[1] 0.001
+
+$z
+[1] 0.9999966
+
+
+##### LOWLAND
+
+> gamStat(bt)
+------------------------------
+Calculated gamma: -3.85652
+pvalue: 5.75064e-05 
+test: one-tailed; Ho: rates have not decreased over time 
+*assumes complete taxon sampling.
+$gamstat
+[1] -3.85652
+
+$pval
+[1] 5.75064e-05
+
+$test
+[1] "one-tailed; Ho: rates have not decreased over time"
+
+> results<-fitdAICrc(bt, modelset = c("pureBirth", "bd","DDX", "DDL", "yule2rate"),ints="NULL")
+
+--------------Model Summary----------------
+
+MODEL pureBirth 
+
+Parameters:  r1 
+
+LH -2.960582 
+
+AIC 7.921163 
+
+r1 0.2999093 
+
+a 7.921163 
+
+
+--------------------------
+MODEL bd 
+
+Parameters:  r1, a 
+
+LH -2.960582 
+
+AIC 9.921163 
+
+r1 0.2999093 
+
+a 0 
+
+
+--------------------------
+MODEL DDX 
+
+Parameters:  r1, X 
+
+LH 2.057972 
+
+AIC -0.1159438 
+
+r1 4.868327 
+
+a -0.1159438 
+
+x 1.218663 
+
+
+--------------------------
+MODEL DDL 
+
+Parameters:  r1, k 
+
+LH 8.673949 
+
+AIC -13.3479 
+
+r1 2.185127 
+
+a -13.3479 
+
+k 15.25995 
+
+
+--------------------------
+MODEL yule2rate 
+
+Parameters:  r1, r2, ts 
+
+LH 5.176116 
+
+AIC -4.352232 
+
+r1 0.7459123 
+
+r2 0.06537422 
+
+st 1.982615 
+
+
+--------------------------
+
+Best Constant Rate Model = pureBirth  AIC  7.921163 
+
+Best Rate Variable Model = DDL  AIC  -13.3479 
+
+delta AICrc =  21.26906 
+> fitSPVAR(bt)
+$model
+[1] "SPVAR"
+
+$LH
+[1] 3.722275
+
+$aic
+[1] -1.44455
+
+$lam0
+[1] 2.330433
+
+$k
+[1] 0.8633916
+
+$mu0
+[1] 0.001
+
+> fitBOTHVAR(bt)
+$model
+[1] "BOTHVAR"
+
+$LH
+[1] 3.725441
+
+$aic
+[1] 0.5491188
+
+$lam0
+[1] 2.327012
+
+$k
+[1] 0.8634578
+
+$mu0
+[1] 0.001
+
+$z
+[1] 0.001
+
+> fitEXVAR(bt)
+$model
+[1] "EXVAR"
+
+$LH
+[1] -2.960601
+
+$aic
+[1] 11.9212
+
+$lam0
+[1] 0.2999119
+
+$mu0
+[1] 0.001
+
+$z
+[1] 0.001
+
+#### UPLAND
+
+> gamStat(bt)
+------------------------------
+Calculated gamma: -1.418625
+pvalue: 0.07800422 
+test: one-tailed; Ho: rates have not decreased over time 
+*assumes complete taxon sampling.
+$gamstat
+[1] -1.418625
+
+$pval
+[1] 0.07800422
+
+$test
+[1] "one-tailed; Ho: rates have not decreased over time"
+
+> results<-fitdAICrc(bt, modelset = c("pureBirth", "bd","DDX", "DDL", "yule2rate"),ints="NULL")
+
+--------------Model Summary----------------
+
+MODEL pureBirth 
+
+Parameters:  r1 
+
+LH 1.464967 
+
+AIC -0.9299335 
+
+r1 0.3162928 
+
+a -0.9299335 
+
+
+--------------------------
+MODEL bd 
+
+Parameters:  r1, a 
+
+LH 1.464967 
+
+AIC 1.070067 
+
+r1 0.3162928 
+
+a 0 
+
+
+--------------------------
+MODEL DDX 
+
+Parameters:  r1, X 
+
+LH 1.736868 
+
+AIC 0.5262641 
+
+r1 0.519617 
+
+a 0.5262641 
+
+x 0.2163701 
+
+
+--------------------------
+MODEL DDL 
+
+Parameters:  r1, k 
+
+LH 3.149495 
+
+AIC -2.298989 
+
+r1 0.6486411 
+
+a -2.298989 
+
+k 25.92832 
+
+
+--------------------------
+MODEL yule2rate 
+
+Parameters:  r1, r2, ts 
+
+LH 5.13302 
+
+AIC -4.266041 
+
+r1 0.4564397 
+
+r2 0.0876189 
+
+st 1.098712 
+
+
+--------------------------
+
+Best Constant Rate Model = pureBirth  AIC  -0.9299335 
+
+Best Rate Variable Model = yule2rate  AIC  -4.266041 
+
+delta AICrc =  3.336107 
+> fitSPVAR(bt)
+$model
+[1] "SPVAR"
+
+$LH
+[1] 1.495812
+
+$aic
+[1] 3.008377
+
+$lam0
+[1] 0.3727771
+
+$k
+[1] 0.02959201
+
+$mu0
+[1] 0.001
+
+> fitBOTHVAR(bt)
+$model
+[1] "BOTHVAR"
+
+$LH
+[1] 1.498817
+
+$aic
+[1] 5.002367
+
+$lam0
+[1] 0.371751
+
+$k
+[1] 0.02932669
+
+$mu0
+[1] 0.001
+
+$z
+[1] 0.001
+
+> fitEXVAR(bt)
+$model
+[1] "EXVAR"
+
+$LH
+[1] 1.461279
+
+$aic
+[1] 3.077442
+
+$lam0
+[1] 0.3167126
+
+$mu0
+[1] 0.001
+
+$z
+[1] 2.181173
+
+######## Torquatus
+
+> gamStat(bt)
+------------------------------
+Calculated gamma: -1.704741
+pvalue: 0.04412133 
+test: one-tailed; Ho: rates have not decreased over time 
+*assumes complete taxon sampling.
+$gamstat
+[1] -1.704741
+
+$pval
+[1] 0.04412133
+
+$test
+[1] "one-tailed; Ho: rates have not decreased over time"
+
+> results<-fitdAICrc(bt, modelset = c("pureBirth", "bd","DDX", "DDL", "yule2rate"),ints="NULL")
+
+--------------Model Summary----------------
+
+MODEL pureBirth 
+
+Parameters:  r1 
+
+LH -4.293293 
+
+AIC 10.58659 
+
+r1 0.3208152 
+
+a 10.58659 
+
+
+--------------------------
+MODEL bd 
+
+Parameters:  r1, a 
+
+LH -4.293293 
+
+AIC 12.58659 
+
+r1 0.3208152 
+
+a 0 
+
+
+--------------------------
+MODEL DDX 
+
+Parameters:  r1, X 
+
+LH -3.262096 
+
+AIC 10.52419 
+
+r1 1.390941 
+
+a 10.52419 
+
+x 0.836113 
+
+
+--------------------------
+MODEL DDL 
+
+Parameters:  r1, k 
+
+LH -1.270605 
+
+AIC 6.541209 
+
+r1 1.392154 
+
+a 6.541209 
+
+k 9.605444 
+
+
+--------------------------
+MODEL yule2rate 
+
+Parameters:  r1, r2, ts 
+
+LH -2.566511 
+
+AIC 11.13302 
+
+r1 0.5524549 
+
+r2 0.1420872 
+
+st 1.487873 
+
+
+--------------------------
+
+Best Constant Rate Model = pureBirth  AIC  10.58659 
+
+Best Rate Variable Model = DDL  AIC  6.541209 
+
+delta AICrc =  4.045377 
+> fitSPVAR(bt)
+$model
+[1] "SPVAR"
+
+$LH
+[1] -3.597461
+
+$aic
+[1] 13.19492
+
+$lam0
+[1] 0.8180775
+
+$k
+[1] 0.3468173
+
+$mu0
+[1] 0.001
+
+> fitBOTHVAR(bt)
+$model
+[1] "BOTHVAR"
+
+$LH
+[1] -3.596094
+
+$aic
+[1] 15.19219
+
+$lam0
+[1] 0.8166629
+
+$k
+[1] 0.3466064
+
+$mu0
+[1] 0.001
+
+$z
+[1] 0.001
+
+> fitEXVAR(bt)
+$model
+[1] "EXVAR"
+
+$LH
+[1] -4.293302
+
+$aic
+[1] 14.5866
+
+$lam0
+[1] 0.3208175
+
+$mu0
+[1] 0.001
+
+$z
+[1] 0.001
+
+
+## BRUN
+
+ bt<-getBtimes("bruntree.tre")
+> gamStat(bt)
+------------------------------
+Calculated gamma: -1.954017
+pvalue: 0.02534962 
+test: one-tailed; Ho: rates have not decreased over time 
+*assumes complete taxon sampling.
+$gamstat
+[1] -1.954017
+
+$pval
+[1] 0.02534962
+
+$test
+[1] "one-tailed; Ho: rates have not decreased over time"
+
+> plotLtt(bt)
+[1] 0.6931472 1.0986123 1.3862944 1.6094379 1.7917595 1.9459101 2.0794415 2.1972246
+> results<-fitdAICrc(bt, modelset = c("pureBirth", "bd","DDX", "DDL", "yule2rate"),ints="NULL")
+
+--------------Model Summary----------------
+
+MODEL pureBirth 
+
+Parameters:  r1 
+
+LH -3.94009 
+
+AIC 9.880181 
+
+r1 0.3404313 
+
+a 9.880181 
+
+
+--------------------------
+MODEL bd 
+
+Parameters:  r1, a 
+
+LH -3.94009 
+
+AIC 11.88018 
+
+r1 0.3404313 
+
+a 0 
+
+
+--------------------------
+MODEL DDX 
+
+Parameters:  r1, X 
+
+LH -2.37125 
+
+AIC 8.742499 
+
+r1 3.051314 
+
+a 8.742499 
+
+x 1.359487 
+
+
+--------------------------
+MODEL DDL 
+
+Parameters:  r1, k 
+
+LH 0.8737545 
+
+AIC 2.252491 
+
+r1 3.047567 
+
+a 2.252491 
+
+k 7.184218 
+
+
+--------------------------
+MODEL yule2rate 
+
+Parameters:  r1, r2, ts 
+
+LH -2.195703 
+
+AIC 10.39141 
+
+r1 0.7647814 
+
+r2 0.1613626 
+
+st 1.637358 
+
+
+--------------------------
+
+Best Constant Rate Model = pureBirth  AIC  9.880181 
+
+Best Rate Variable Model = DDL  AIC  2.252491 
+
+delta AICrc =  7.62769 
+> fitSPVAR(bt)
+$model
+[1] "SPVAR"
+
+$LH
+[1] -2.65786
+
+$aic
+[1] 11.31572
+
+$lam0
+[1] 1.262321
+
+$k
+[1] 0.7207029
+
+$mu0
+[1] 0.001
+
+> fitBOTHVAR(bt)
+$model
+[1] "BOTHVAR"
+
+$LH
+[1] -2.656919
+
+$aic
+[1] 13.31384
+
+$lam0
+[1] 1.260523
+
+$k
+[1] 0.7205246
+
+$mu0
+[1] 0.001
+
+$z
+[1] 0.001
+
+> fitEXVAR(bt)
+$model
+[1] "EXVAR"
+
+$LH
+[1] -3.940095
+
+$aic
+[1] 13.88019
+
+$lam0
+[1] 0.3404332
+
+$mu0
+[1] 0.001
+
+$z
+[1] 0.001
+
+
+###LYS 
+
+> bt<-getBtimes("lystree.tre")
+> gamStat(bt)
+------------------------------
+Calculated gamma: -1.149179
+pvalue: 0.125241 
+test: one-tailed; Ho: rates have not decreased over time 
+*assumes complete taxon sampling.
+$gamstat
+[1] -1.149179
+
+$pval
+[1] 0.125241
+
+$test
+[1] "one-tailed; Ho: rates have not decreased over time"
+
+> plotLtt(bt)
+[1] 0.6931472 1.0986123 1.3862944
+> results<-fitdAICrc(bt, modelset = c("pureBirth", "bd","DDX", "DDL", "yule2rate"),ints="NULL")
+ Error in nlm(function(p) ddfunc(p[1], p[2]), c(0.5, N * 2), hessian = TRUE) : 
+  non-finite value supplied by 'nlm' 
+> results<-fitdAICrc(bt, modelset = c("pureBirth", "bd","DDX", "DDL", "yule2rate"),ints="NULL")
+Error in nlm(function(p) ddfunc(p[1], p[2]), c(0.5, N * 2), hessian = TRUE) : 
+  non-finite value supplied by 'nlm'
+> fitSPVAR(bt)
+$model
+[1] "SPVAR"
+
+$LH
+[1] -0.9855366
+
+$aic
+[1] 7.971073
+
+$lam0
+[1] 1.523441
+
+$k
+[1] 3.507407
+
+$mu0
+[1] 0.001
+
+> fitBOTHVAR(bt)
+$model
+[1] "BOTHVAR"
+
+$LH
+[1] -0.9862506
+
+$aic
+[1] 9.972501
+
+$lam0
+[1] 1.542955
+
+$k
+[1] 3.53681
+
+$mu0
+[1] 0.0217899
+
+$z
+[1] 0.6175666
+
+> fitEXVAR(bt)
+$model
+[1] "EXVAR"
+
+$LH
+[1] -1.62054
+
+$aic
+[1] 9.24108
+
+$lam0
+[1] 0.2688285
+
+$mu0
+[1] 0.001
+
+$z
+[1] 0.001

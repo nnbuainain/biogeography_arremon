@@ -1,0 +1,142 @@
+Results BAMM MAY 2020
+
+###Posterior of each shift
+> shift_probs <- summary(edata)
+
+Analyzed 9001 posterior samples
+Shift posterior distribution:
+
+         0    0.91000
+         1    0.08500
+         2    0.00860
+         3    0.00089
+         4    0.00011
+
+Compute credible set of shift configurations for more information:
+	See ?credibleShiftSet and ?getBestShiftConfiguration
+
+###BayesFactor of each shift
+
+> bfmat <- computeBayesFactors(postfile, expectedNumberOfShifts=1, burnin=0.3)
+> bfmat
+            0          1          2          3
+0 1.000000000 5.39948893 23.3051471 113.196429
+1 0.185202713 1.00000000  4.3161765  20.964286
+2 0.042908976 0.23168654  1.0000000   4.857143
+3 0.008834201 0.04770017  0.2058824   1.000000
+
+###95% credibility shift
+
+> css$number.distinct
+[1] 1
+> #summary
+> summary(css)
+
+ 95 % credible set of rate shift configurations sampled with BAMM
+
+Distinct shift configurations in credible set:  1
+
+Frequency of 1 shift configurations with highest posterior probability:
+
+
+   rank     probability cumulative  Core_shifts
+         1          1          1          0
+
+###MeanRates
+
+##ALL
+
+> mean(allrates$lambda)
+[1] 0.3763127
+> quantile(allrates$lambda, c(0.05, 0.95))
+       5%       95% 
+0.2714467 0.5051471 
+
+#low
+
+> low <- getCladeRates(edata, node=59)
+> mean(low$lambda)
+[1] 0.3665209
+> quantile(low$lambda, c(0.05, 0.95))
+       5%       95% 
+0.2635560 0.4924261 
+
+##up
+
+> mean(up$lambda)
+[1] 0.3844702
+> quantile(up$lambda, c(0.05, 0.95))
+       5%       95% 
+0.2764266 0.5175721 
+
+##brun
+> mean(brun$lambda)
+[1] 0.3767695
+> quantile(brun$lambda, c(0.05, 0.95))
+       5%       95% 
+0.2710836 0.5069583 
+
+##tor
+> mean(tor$lambda)
+[1] 0.3678503
+> quantile(tor$lambda, c(0.05, 0.95))
+       5%       95% 
+0.2644628 0.4950146 
+
+
+##lys
+> mean(lys$lambda)
+[1] 0.4165362
+> quantile(lys$lambda, c(0.05, 0.95))
+       5%       95% 
+0.2930660 0.5692782 
+
+
+########## Extinction rates
+
+##all 
+> mean(allrates$mu)
+[1] 0.07736859
+> quantile(allrates$mu, c(0.05, 0.95))
+        5%        95% 
+0.00427238 0.23160900 
+
+##lowland
+> mean(low$mu)
+[1] 0.07716476
+> quantile(low$mu, c(0.05, 0.95))
+        5%        95% 
+0.00407961 0.23068800 
+
+> #upland
+> up <- getCladeRates(edata, node=39)
+> mean(up$mu)
+[1] 0.07753839
+> quantile(up$mu, c(0.05, 0.95))
+        5%        95% 
+0.00408211 0.23256600 
+
+> #brunneinucha
+
+> brun <- getCladeRates(edata, node=52)
+> mean(brun$mu)
+[1] 0.07723081
+> quantile(brun$mu, c(0.05, 0.95))
+        5%        95% 
+0.00397566 0.23189700 
+
+> #torquatus
+> tor <- getCladeRates(edata, node=43)
+> mean(tor$mu)
+[1] 0.07728549
+> quantile(tor$mu, c(0.05, 0.95))
+       5%       95% 
+0.0039778 0.2324640 
+
+#Lysurus
+> lys <- getCladeRates(edata, node=41)
+> mean(lys$mu)
+[1] 0.07908198
+> quantile(lys$mu, c(0.05, 0.95))
+       5%       95% 
+0.0039205 0.2378060 

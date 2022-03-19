@@ -1,0 +1,52 @@
+> ##Choose the model with the lowest AIC value
+> aic
+      ER      ARD      SYM 
+45.67431 54.73303 48.99893 
+> #or the model with the AICw closest to 1
+> aic.w(aic)
+        ER        ARD        SYM 
+0.83299467 0.00898599 0.15801934 
+> ER
+Object of class "fitMk".
+
+Fitted (or set) value of Q:
+                dry     humid humid_dry
+dry       -0.051832  0.025916  0.025916
+humid      0.025916 -0.051832  0.025916
+humid_dry  0.025916  0.025916 -0.051832
+
+Fitted (or set) value of pi:
+      dry     humid humid_dry 
+0.3333333 0.3333333 0.3333333 
+
+Log-likelihood: -21.837154 
+
+Optimization method used was "nlminb"
+
+> mtrees<-make.simmap(tree,svl,model="ER",nsim=10000)
+make.simmap is sampling character histories conditioned on the transition matrix
+
+Q =
+                  dry       humid   humid_dry
+dry       -0.05183162  0.02591581  0.02591581
+humid      0.02591581 -0.05183162  0.02591581
+humid_dry  0.02591581  0.02591581 -0.05183162
+(estimated using likelihood);
+and (mean) root node prior probabilities
+pi =
+      dry     humid humid_dry 
+0.3333333 0.3333333 0.3333333 
+
+10000 trees with a mapped discrete character with states:
+ dry, humid, humid_dry 
+
+trees have 5.7503 changes between states on average
+
+changes are of the following types:
+     dry,humid dry,humid_dry humid,dry humid,humid_dry humid_dry,dry humid_dry,humid
+x->y    0.1154        0.0888    2.1244           3.163        0.0842          0.1745
+
+mean total time spent in each state is:
+            dry      humid  humid_dry    total
+raw  5.52121542 96.1099597 9.42136790 111.0525
+prop 0.04971715  0.8654458 0.08483703   1.0000
